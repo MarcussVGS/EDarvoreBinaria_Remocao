@@ -192,16 +192,17 @@ public class ABB {
         double menorMaiores = menor(aux.getDireita());
         double maiorMenores = maior(aux.getEsquerda());
         
-        if{contarAltura(menorMaiores) > contarAltura(maiorMenores){
-            
-            
+        if(contarAltura(menorMaiores) > contarAltura(maiorMenores) ){
+    //      remove o valor a ser realocado
+            if(busca(menorMaiores) == 0){ removeGrau0(menorMaiores); }
+            if(busca(menorMaiores) == 1){ removeGrau1(menorMaiores); }
+            //      atualiza o NO com o valor realocado
+            aux.setValor(menorMaiores);
+        } else {
+            if(busca(maiorMenores) == 0){ removeGrau0(maiorMenores); }
+            if(busca(maiorMenores) == 1){ removeGrau1(maiorMenores); }
+            aux.setValor(maiorMenores);
         }
-//      remove o valor a ser realocado
-        if(busca(menor) == 0){ removeGrau0(menor); }
-        if(busca(menor) == 1){ removeGrau1(menor); }
-        
-//      atualiza o NO com o valor realocado
-        aux.setValor(menor);
         return true;
     }
     
