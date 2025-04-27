@@ -88,6 +88,24 @@ public class ABB {
         return -1; 
     }
     
+    public int contarAltura (double valor){
+        if (vazia()){ return -1;}
+        //retorna 0 se for a raiz
+        int altura = 0;
+        No aux = this.raiz;
+//      percorre ENQUANTO aux for diferente de NULL
+        while (aux != null) {
+            if (aux.getValor() == valor) { return altura; }
+            if (valor > aux.getValor() ){
+                aux = aux.getDireita();
+            } else {
+                aux = aux.getEsquerda();
+            }
+            altura++;
+        }
+        return altura = 0;
+    }
+    
 //  método que remove folha ou raiz sem galho
     public boolean removeGrau0 (double valor){
         if (busca(valor) == -1){ return false; }
@@ -171,8 +189,13 @@ public class ABB {
         
 //      OBS: o melhor seria verificar a altura da arvore
 //      menor entre os maiores
-        double menor = menor(aux.getDireita());
+        double menorMaiores = menor(aux.getDireita());
+        double maiorMenores = maior(aux.getEsquerda());
         
+        if{contarAltura(menorMaiores) > contarAltura(maiorMenores){
+            
+            
+        }
 //      remove o valor a ser realocado
         if(busca(menor) == 0){ removeGrau0(menor); }
         if(busca(menor) == 1){ removeGrau1(menor); }
